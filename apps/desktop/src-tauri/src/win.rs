@@ -84,6 +84,22 @@ fn builder<'a>(app: &'a AppHandle, label: &'a str, url: &str) -> WebviewWindowBu
     }
 }
 
+/// 普通文档窗口在 Mac 上交给系统绘制标题栏和红黄绿按钮。
+/// 快捷框、提醒和桌面组件仍使用各自的无边框卡片。
+fn document_builder<'a>(app: &'a AppHandle, label: &'a str, url: &str) -> WebviewWindowBuilder<'a, Wry, AppHandle> {
+    let b = builder(app, label, url);
+    #[cfg(target_os = "macos")]
+    {
+        b.decorations(true)
+            .title_bar_style(tauri::TitleBarStyle::Visible)
+            .initialization_script(include_str!("macos-window-chrome.js"))
+    }
+    #[cfg(not(target_os = "macos"))]
+    {
+        b.decorations(false)
+    }
+}
+
 // ---------- WebView2 在贾维喵管家开着时自己更新了 ----------
 // 之后新建的窗口用的是新版本，和已经在跑的旧版本对不上，建不出来（主窗口、笔记窗口、提醒卡片都出不来，也不报错），
 // 开着的快捷框、桌面组件倒是照常能用。只有重启贾维喵管家才好：发现更新了、又没在用贾维喵管家时悄悄重启；
@@ -264,7 +280,7 @@ fn main_rect(app: &AppHandle) -> Option<(i32, i32, u32, u32)> {
 
 /// 藏起来时记下位置和大小（最大化、最小化着的不记，下次还是原来正常时的样子）
 fn save_main_rect(w: &WebviewWindow) {
-    if w.is_maximized().unwrap_or(false) || w.is_minimized().unwrap_or(false) {
+    if w.is_maximized().unwrap_or(false) || w.is_minimized().unwrap_or(false) || w.is_fullscreen().unwrap_or(false) {
         return;
     }
     let (Ok(p), Ok(s)) = (w.outer_position(), w.inner_size()) else {
@@ -283,13 +299,12 @@ pub fn open_main(app: &AppHandle) {
     }
     let (mw, mh) = main_size(app);
     // 先藏着，网页读完数据、画好第一屏后自己显示出来（main.ts）
-    let r = builder(app, "main", "index.html")
+    let r = document_builder(app, "main", "index.html")
         .title(if crate::dev_data_dir().is_some() { "贾维喵管家 · 单页本地版" } else { "贾维喵管家" })
         .inner_size(mw, mh)
         .min_inner_size(MAIN_MIN_W, MAIN_MIN_H)
         // 让网页自己收拖进来的文件（笔记里拖入图片）
         .disable_drag_drop_handler()
-        .decorations(false)
         .center()
         .background_color(window_color())
         .visible(false)
@@ -701,12 +716,11 @@ pub fn open_note(app: &AppHandle, id: i64) {
         return;
     }
     // 先藏着，网页读好笔记、按上次的大小摆好后自己显示（note.ts）
-    let r = builder(app, &label, &format!("note.html?id={id}"))
+    let r = document_builder(app, &label, &format!("note.html?id={id}"))
         .title("贾维喵管家笔记")
         .inner_size(980.0, 680.0)
         .min_inner_size(560.0, 400.0)
         .disable_drag_drop_handler()
-        .decorations(false)
         .center()
         .background_color(window_color())
         .visible(false)

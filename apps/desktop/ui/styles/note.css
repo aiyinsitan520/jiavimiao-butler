@@ -17,6 +17,10 @@ body { background: var(--bg); overflow: hidden; }
 .wctl button.close:hover { background: var(--danger); color: var(--danger-soft); }
 .wctl .lucide { width: 15px; height: 15px; }
 
+html[data-window-chrome="macos-native"] .wctl,
+html[data-window-chrome="macos-native"] .ntb .wsep { display: none; }
+html[data-window-chrome="macos-native"] .ntb { padding-right: 8px; }
+
 /* 别处也改了、笔记删掉了 */
 .nbar { flex: none; padding: 0 12px 8px; }
 .nbar .banner { align-items: center; }

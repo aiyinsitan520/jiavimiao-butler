@@ -41,6 +41,10 @@ button.tag { border: 0; cursor: pointer; }
 .tb-wc .close:hover { background: var(--danger); color: #fff; }
 .tb-wc .lucide { width: 14px; height: 14px; stroke-width: 1.5; }
 
+/* macOS 原生标题栏已提供窗口按钮，网页这一行只保留应用工具。 */
+html[data-window-chrome="macos-native"] .tb-wc { display: none; }
+html[data-window-chrome="macos-native"] .frame > .tb { padding-right: 12px; }
+
 /* ---------- 侧栏 ---------- */
 .shell { display: grid; grid-template-columns: calc(200px * var(--fs)) minmax(0, 1fr); min-height: 0; }
 .sbar { padding: 6px 10px 12px; display: flex; flex-direction: column; gap: 2px; min-height: 0; overflow: hidden auto; }
