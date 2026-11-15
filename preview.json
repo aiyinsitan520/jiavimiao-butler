@@ -1,19 +1,19 @@
 {
-  "version": "0.4.7",
-  "notes": "# 贾维喵管家 0.4.7 测试版\r\n\r\n新增自选数据保存位置：在“设置 → 数据”直接选择磁盘或文件夹。空文件夹直接使用；如果目录已有文件（例如直接选择 E 盘），会新建“贾维喵资料”子文件夹。同名目录已存在时拒绝覆盖，原资料保留。修复原先将非空目录、路径重叠合成一句“网盘”提示的问题，错误会说明具体原因。\r\n\r\n新增方便其他 AI Agent 读取的 data.json 六表业务快照，带更新时间和扫描问题；沿用 Markdown 正文、index.json 及已授权会话阅读文件。支持打开阅读目录与立即更新，后台每30秒刷新。内部设置、连接配置及系统凭据不写入业务快照。迁移和备份包含新的 JSON 文件。\r\n\r\n新增“打开待办”“打开灵感”全局快捷键。Windows 默认 Ctrl+Alt+T / Ctrl+Alt+I，Mac 默认 ⌘+⌥+T / ⌘+⌥+I；可在“设置 → 通用 → 快捷键”修改或清空，占用时明确提示。\r\n\r\n迁移前处理已保存的原生修改；两份数据库及附件、阅读文件复制校验后才切换启动位置。指针写入失败会恢复原库可写。迁移前请保存其他窗口中的编辑内容；同名已有资料不自动合并。合成资料的双库迁移、失败恢复及 C 盘至 E 盘复制已验证；系统目录选择到自动重启完整链路和 Mac 真机仍待验收。\r\n\r\nWindows x64 安装包；Mac Apple Silicon DMG 与签名 app.tar.gz 更新包。0.4.3及以后可在“软件更新”检查测试版更新，下载校验后由本人确认安装；更早版本首次需手动安装。保留旧仓库重定向更新兼容。Mac 尚未公证，本版完整安装升级、真实模型与微信需本人验收。\r\n\r\nAGPL-3.0-only，保留 Dingmi、Jarvis MIT 及第三方许可。\r\n\r\n[用法](https://github.com/aiyinsitan520/jiavimiao-butler/blob/main/docs/usage.zh-CN.md) · [更新说明](https://github.com/aiyinsitan520/jiavimiao-butler/blob/main/docs/updating.md)\r\n",
-  "pub_date": "2026-11-14T21:03:54+08:00",
+  "version": "0.4.8",
+  "notes": "# 贾维喵管家 0.4.8 测试版\r\n\r\nMac 主窗口和独立笔记窗口改用 macOS 原生标题栏，关闭、最小化和全屏按钮由系统在左上角显示，遵循系统红黄绿样式及交互。移除 Mac 页面右上角重复的 Windows 式窗口按钮，应用工具栏继续保留搜索、快捷框和笔记工具。快捷框和桌面组件保留原来的浮动卡片形式。\r\n\r\n主窗口处于全屏时不再覆盖正常窗口的位置和尺寸记录。独立笔记的系统关闭事件继续先处理待保存编辑，再销毁窗口；主窗口关闭后继续在菜单栏运行，可从 Dock 或菜单栏重新打开，退出应用使用应用菜单或菜单栏的“退出”。\r\n\r\n同时包含开发预览更新提示修正：预览版不再错误显示“重启更新”；正式安装版仍在本人确认后安装。保留 0.4.7 的自选资料目录、Agent 阅读快照及待办/灵感快捷键。\r\n\r\n前端构建、611 项前端检查、Windows 原生测试及 34 项隔离浏览器窗口检查已通过。浏览器检查覆盖两类窗口各三种尺寸、重复按钮隐藏、Windows 按钮绑定和关闭前保存顺序，不等同于 Mac 原生窗口验收。Mac 真机红黄绿按钮、全屏切换、多显示器、安装升级及资料保留仍需验收。\r\n\r\nWindows x64 安装包；Mac Apple Silicon DMG 与签名 app.tar.gz 更新包。0.4.3 及以后可在“软件更新”检查测试版更新，下载校验后由本人确认安装；更早版本首次需手动安装。Mac 尚未公证，真实模型与微信需本人验收。\r\n\r\nAGPL-3.0-only，保留 Dingmi、Jarvis MIT 及第三方许可。\r\n\r\n[用法](https://github.com/aiyinsitan520/jiavimiao-butler/blob/main/docs/usage.zh-CN.md) · [更新说明](https://github.com/aiyinsitan520/jiavimiao-butler/blob/main/docs/updating.md)\r\n",
+  "pub_date": "2026-11-15T10:46:19+08:00",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/aiyinsitan520/jarvis-butler-desktop/releases/download/v0.4.7-preview.1/JarvisButler-0.4.7-Windows-x64-setup.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRclp0eGRmM2lSQW1ITnBLMDZ4bnNHUEYyY2tEM1FWRUVJSVNWdFZjdWtpVGxXbTFTenJUQzVoN0xKZWx1M2xCR29tbGFESTdlN1dWWW1CaTA5WnZXSERJY0k3bHROTmdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NjYyMDcyCWZpbGU66LS+57u05Za1566h5a62XzAuNC43X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjQuNwpiVy82VjMzdGt5aFNCYXZFUzh4OUtuT0tuVE5lNTBqc2dhVDlZVEFTbDdaQWV1T0JQYVZISUlGQ2w3aWp2STBHUEJTSkcvR0lyVDNwNDJ1U0k3elVBZz09Cg==",
-      "sha256": "3d8f2a4ba9a011b2b3b1b877193ec36bb5ad21ba765c47c66580f251872b1a17",
-      "size": 9040177
+      "url": "https://github.com/aiyinsitan520/jarvis-butler-desktop/releases/download/v0.4.8-preview.1/JarvisButler-0.4.8-Windows-x64-setup.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRclp0eGRmM2lSQXJmaVZQS2g3WWRwazk2djN4dkU2eFRqNzJwNkRKaHZFUEUyK2d1bWVXTFRsaUdyZVQ5N0JwSFZpZ3VkWGprblFuSkJIb2p4MUFibE1NUzNnMDBuV2dJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzExNzE1CWZpbGU66LS+57u05Za1566h5a62XzAuNC44X3g2NC1zZXR1cC5leGUJdmVyc2lvbjowLjQuOAptblBmYm4xc1EwNUJScFpMdTNDOVJIQ2JHZjg3VDNacXFnNlZRZm0vcHZHVHB0WUNKRko0N0hxSHVKdGZ3UkVxeWxoTTZpZ05wR2FMeHFMazdCbXREdz09Cg==",
+      "sha256": "9e5d623f77b475193970edeb57b5a7dd1969a5b2bbda5f05f2b7bb6a6b09c21f",
+      "size": 9038783
     },
     "darwin-aarch64": {
-      "url": "https://github.com/aiyinsitan520/jarvis-butler-desktop/releases/download/v0.4.7-preview.1/JarvisButler-0.4.7-macOS-AppleSilicon.app.tar.gz",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRclp0eGRmM2lSQXVPN1pCdXJ3ek1GRU9EVHRPL3RiYkx3TkRHQlZuRWhIZ3F0SjhWUGg0dnloRGErN0pQL3E0RkVzQWdzamRyVzlOZjcyZmFQT3pVMjVocjdBbC9YQWdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NjYyMTM4CWZpbGU66LS+57u05Za1566h5a62LmFwcC50YXIuZ3oJdmVyc2lvbjowLjQuNwp4MHlDWWZ4S0dFRFpWM1ZRREVicXhOZnRYdFFha1FYWlFZUUlPVnVuUEhpZ2F0eG42VnFrak5TUDNKYWdKQnUzWWw4SkhaTXBRK3VlWTY4U09pZVJCZz09Cg==",
-      "sha256": "12c68752dfcb9399411d9e39b01ebf5b1f84b4cc59ea96dc578d47b30652e4cd",
-      "size": 9561806
+      "url": "https://github.com/aiyinsitan520/jarvis-butler-desktop/releases/download/v0.4.8-preview.1/JarvisButler-0.4.8-macOS-AppleSilicon.app.tar.gz",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRclp0eGRmM2lSQWpuc3VlUHdTS2RUTm1DRGlzRVZzVjl4RHlTVWNMVXg4RC9nek5xREgrYWZDNTJNelgvVTVvUWVmRzI3MVdxL1hqRzgrMG1oLzFMVDhPWmloMmlCNUF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NzExNDM4CWZpbGU66LS+57u05Za1566h5a62LmFwcC50YXIuZ3oJdmVyc2lvbjowLjQuOApTWVhuTk1TODV5TEV5Z0gvdU9XRjRNZFlFc0E0NmF4STNZVmVBOUlhZ0ZPREl4RlV4NnprKzNGY0R3S2Y3RFpWV1FiU0pBZXlaRHNXeXE3Ulg1bUNDUT09Cg==",
+      "sha256": "dadef1e66acc819db9e846ff3e45b4d3798f14279af08c55a5cc843cccf32054",
+      "size": 9562520
     }
   }
 }
