@@ -8,7 +8,7 @@ GitHub 仓库：[`aiyinsitan520/jiavimiao-butler`](https://github.com/aiyinsitan
 
 保留 [Dingmi](https://github.com/qingzo/dingmi) 的主面板、快捷记录与主题，融合 Jarvis Butler 的知识管理能力。一个窗口写笔记、看待办，在右侧与 AI 对话；把重要会话归档，第二天继续复习。
 
-[下载 Windows／Mac 测试版](https://github.com/aiyinsitan520/jiavimiao-butler/releases/tag/v0.4.7-preview.1) · [完整中文使用指南](docs/usage.zh-CN.md) · [功能与用法](#功能与用法) · [实际界面图库](#实际界面图库) · [来源与许可](#来源与许可)
+[下载 Windows／Mac 测试版](https://github.com/aiyinsitan520/jiavimiao-butler/releases/tag/v0.4.8-preview.1) · [完整中文使用指南](docs/usage.zh-CN.md) · [功能与用法](#功能与用法) · [实际界面图库](#实际界面图库) · [来源与许可](#来源与许可)
 
 ![贾维喵管家新版 Windows 实机：随手记、白猫与 AI 侧栏](docs/screenshots/windows-main.png)
 
@@ -26,10 +26,12 @@ GitHub 仓库：[`aiyinsitan520/jiavimiao-butler`](https://github.com/aiyinsitan
 
 | 平台 | 安装包 | 状态 |
 | --- | --- | --- |
-| Windows x64 | [下载 EXE](https://github.com/aiyinsitan520/jiavimiao-butler/releases/download/v0.4.7-preview.1/JarvisButler-0.4.7-Windows-x64-setup.exe) | 构建、自动化测试与下载签名核对通过；本版完整安装升级待验收 |
-| Mac Apple Silicon（M1／M2／M3 等） | [下载 DMG](https://github.com/aiyinsitan520/jiavimiao-butler/releases/download/v0.4.7-preview.1/JarvisButler-0.4.7-macOS-AppleSilicon.dmg) | 构建、自动化测试与下载签名核对通过；真机体验待验收，未公证 |
+| Windows x64 | [下载 EXE](https://github.com/aiyinsitan520/jiavimiao-butler/releases/download/v0.4.8-preview.1/JarvisButler-0.4.8-Windows-x64-setup.exe) | 构建、自动化测试与下载签名核对通过；本版完整安装升级待验收 |
+| Mac Apple Silicon（M1／M2／M3 等） | [下载 DMG](https://github.com/aiyinsitan520/jiavimiao-butler/releases/download/v0.4.8-preview.1/JarvisButler-0.4.8-macOS-AppleSilicon.dmg) | 构建、自动化测试与下载签名核对通过；真机体验待验收，未公证 |
 
 Windows 安装后从开始菜单打开；Mac 把应用从 DMG 拖入 Applications。当前均为测试包，Windows 无商业代码签名，Mac 使用 ad-hoc 签名；按系统正常的安全审批流程决定是否打开，不关闭系统保护。Intel Mac 暂无本版安装包。
+
+Mac 0.4.8 的主窗口和独立笔记窗口使用系统左上角红黄绿按钮：红色关闭窗口、黄色最小化、绿色进入或退出全屏；其他窗口操作遵循 macOS 的系统交互。关闭主窗口后仍在菜单栏运行，点击 Dock 图标或菜单栏入口可重新打开；退出应用使用应用菜单或菜单栏的“退出”。
 
 第一次使用建议按下面的顺序：
 

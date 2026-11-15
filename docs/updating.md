@@ -89,3 +89,14 @@ Windows、Mac与publish三个任务全部success。两平台均通过608前端�
 本地验证：611 项前端检查、Windows 原生 148 项通过 / 12 项忽略，34 项 Chromium 布局与桥接检查通过（errors=[]）；两类窗口各三种尺寸、Windows 最小化/最大化绑定、笔记关闭前保存顺序均有覆盖。浏览器图片仅是页面内容，不包含 macOS 系统标题栏。Mac 原生按钮、全屏往返、多显示器、Dock 重新打开和升级保留资料仍需 Mac 真机验收。构建保留原有体积和未使用代码提示，没有增加依赖或触碰现用资料。
 
 本轮按递增版本 v0.4.8-preview.1 打包，后续发布结果见对应 Release 与 Actions；旧 0.4.7 签名资产保持原样。
+
+
+### 0.4.8 发布核验完成（2026-11-15）
+
+[下载 v0.4.8-preview.1](https://github.com/aiyinsitan520/jiavimiao-butler/releases/tag/v0.4.8-preview.1) · [双平台构建与签名发布](https://github.com/aiyinsitan520/jiavimiao-butler/actions/runs/43669323153)。发行源码 a26911976546530647234f642b0d547b542b55b9，Mac、Windows 与 publish 全部 success。
+
+双平台各通过611项前端、32项核心资料库、6项更新策略及共享/服务器集成检查。Windows原生148通过12忽略，Mac原生144通过10忽略；忽略项不计为通过。Mac原生分支已实际编译并打包，不是仅在Windows检查条件编译。现有构建体积、未使用代码和Actions运行时弃用提示仍在，不影响本次成功状态。
+
+Windows EXE、Mac Apple Silicon DMG和签名app.tar.gz、平台/完整清单、SHA及许可均公开。下载后SHA清单5项匹配，11项GitHub资产digest全部匹配；独立Rust验证器对Release及公开preview渠道的两个更新包均验证签名、签名版本0.4.8、平台URL、大小与SHA通过。新旧raw渠道逐字相同且与发行清单对应，旧客户端下载地址重定向均HTTP200。README和使用指南同步新版入口与Mac窗口操作。
+
+本次没有安装新版到个人日常程序、迁移资料或调用真实模型/微信。Mac真机按钮、全屏/多显示器、Dock恢复及本版完整安装更新仍待验收，Mac未公证；历史Windows升级记录不能替代本版验证。未调用外部代理，外部代理用量0；主模型用量未知。

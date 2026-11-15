@@ -1,8 +1,8 @@
 # 贾维喵管家使用指南
 
-适用版本：0.4.7 测试版。目标是把快捷记录、AI 对话、原文归档与每日复习放在一个桌面工作台里。第一次使用不需要配置服务器或微信。
+适用版本：0.4.8 测试版。目标是把快捷记录、AI 对话、原文归档与每日复习放在一个桌面工作台里。第一次使用不需要配置服务器或微信。
 
-[下载 Windows／Mac 安装包](https://github.com/aiyinsitan520/jiavimiao-butler/releases/tag/v0.4.7-preview.1) · [返回项目首页](../README.md) · [截图来源](screenshots/README.md)
+[下载 Windows／Mac 安装包](https://github.com/aiyinsitan520/jiavimiao-butler/releases/tag/v0.4.8-preview.1) · [返回项目首页](../README.md) · [截图来源](screenshots/README.md)
 
 本文产品插图均来自0.4.5版真实Windows原生窗口，使用合成演示资料；AI文字、模型目录和回顾内容是示例，微信未绑定。没有Mac真机图片，详见截图来源。
 
@@ -18,8 +18,8 @@
 
 | 你的电脑 | 下载文件 | 打开方式 |
 | --- | --- | --- |
-| Windows x64 | `JarvisButler-0.4.7-Windows-x64-setup.exe` | 安装后从开始菜单打开“贾维喵管家” |
-| Mac M1／M2／M3 等 Apple Silicon | `JarvisButler-0.4.7-macOS-AppleSilicon.dmg` | 双击 DMG，把应用拖入 Applications 后打开 |
+| Windows x64 | `JarvisButler-0.4.8-Windows-x64-setup.exe` | 安装后从开始菜单打开“贾维喵管家” |
+| Mac M1／M2／M3 等 Apple Silicon | `JarvisButler-0.4.8-macOS-AppleSilicon.dmg` | 双击 DMG，把应用拖入 Applications 后打开 |
 
 `Source code` 是源码压缩包，普通使用者选择 EXE 或 DMG。Intel Mac 不在本次安装包支持范围。
 
@@ -28,6 +28,10 @@
 建议第一次只完成三件事：写一篇笔记、配置一个模型、导入一段学习会话。确认这些记录重新打开后还在，再启用自动采集、每日整理或同步。
 
 源码工作区的 `启动贾维喵测试版.cmd` 依赖已构建的预览 EXE；全新克隆不能只双击脚本就运行。开发预览与安装版默认资料目录独立：要把旧预览资料带到安装版，先在旧版“本地资料”备份，再在安装版“从备份恢复”。
+
+### Mac 窗口操作
+
+0.4.8 起，主窗口和独立笔记窗口使用 macOS 原生标题栏，控制按钮在左上角：红色关闭、黄色最小化、绿色全屏；其他操作遵循系统交互。右上角只保留应用工具。关闭主窗口后仍在菜单栏运行，点击 Dock 图标或菜单栏的打开入口可恢复；要完全退出，使用应用菜单的退出或菜单栏“退出”。独立笔记关闭时继续处理待保存编辑，建议先确认保存状态。快捷框和桌面组件是浮动卡片，保留各自的关闭方式。
 
 ## 2. 认识主面板
 
